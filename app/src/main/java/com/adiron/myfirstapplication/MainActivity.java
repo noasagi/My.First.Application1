@@ -1,5 +1,6 @@
 package com.adiron.myfirstapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
@@ -7,6 +8,8 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
@@ -25,6 +28,9 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
     SeekBar sb;
     TextView emojiTrump1, emojiTrump2;
 
+    Menu menu;
+
+    MenuItem item;
     private boolean isAccessToGameAllowed = false; // משתנה לעקוב אחר אישור הגישה
 
     @Override
@@ -127,4 +133,31 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             s.setText("On");
         }
     }
-}
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+        int id = item.getItemId();
+        if(id == R.id.action_login){
+            Toast.makeText(this, "you selected login", Toast.LENGTH_SHORT).show();
+        }
+        else if(id == R.id.action_register){
+            Toast.makeText(this, "you selected register", Toast.LENGTH_SHORT).show();
+        }
+        else if(id == R.id.action_start){
+            Toast.makeText(this, "you selected start", Toast.LENGTH_SHORT).show();
+        }
+        else if(item.getItemId() == R.id.new_item) {
+            Intent intent = new Intent(this, NewActivity.class);
+            startActivity(intent);
+        }
+        return true;
+    }
+
+    }
