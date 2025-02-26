@@ -157,6 +157,10 @@ public class MainActivity extends AppCompatActivity implements CompoundButton.On
             Intent intent = new Intent(this, NewActivity.class);
             startActivity(intent);
         }
+        else if(item.getItemId() == R.id.shared_pref) {
+            Intent intent = new Intent(this, SharedActivity.class);
+            startActivity(intent);
+        }
         return true;
     }
 

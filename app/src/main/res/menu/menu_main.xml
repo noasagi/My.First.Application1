@@ -29,6 +29,14 @@ xmlns:app="http://schemas.android.com/apk/res-auto">
         android:orderInCategory="50"
         app:showAsAction="never"
         />
+
+    <item
+        android:id="@+id/shared_pref"
+        android:title="Shared P"
+        android:icon="@android:drawable/ic_menu_add"
+        android:orderInCategory="50"
+        app:showAsAction="never"
+        />
 </menu>
 
 
